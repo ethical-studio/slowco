@@ -1,0 +1,27 @@
+{
+  "name": "@slowco/app",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "storybook": "start-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@slowco/config": "*",
+    "@storybook/addon-essentials": "latest",
+    "@storybook/addon-links": "latest",
+    "@storybook/html": "latest",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.4.0",
+    "autoprefixer": "latest",
+    "babel-loader": "latest",
+    "postcss": "latest",
+    "storybook-builder-vite": "latest",
+    "tailwindcss": "latest",
+    "vite": "latest",
+    "vite-plugin-solid": "latest"
+  },
+  "dependencies": {
+    "solid-js": "latest"
+  }
+}

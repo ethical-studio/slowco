@@ -1,0 +1,39 @@
+.card {
+	@apply p-6 rounded-xl bg-primaryFill overflow-hidden relative;
+}
+
+.title {
+	@apply text-darkText dark:text-lightText text-3xl font-extrabold font-display leading-8 mt-4 mb-10 z-10 relative;
+}
+
+.content {
+	@apply relative z-10;
+}
+
+.imageList {
+	@apply flex flex-row;
+}
+
+.imageItem {
+	@apply h-16 rounded-xl mr-2;
+
+	&:nth-last-child(1) {
+		@apply mr-0;
+	}
+}
+
+.overlay, .imageBackground, .darkBackground {
+	@apply absolute top-0 left-0 w-full h-full;
+}
+
+.imageBackground {
+	@apply object-cover z-0;
+}
+
+.darkBackground {
+	@apply bg-black z-10 opacity-25;
+}
+
+.text {
+	@apply text-sm text-darkText opacity-60 leading-4 font-text;
+}
