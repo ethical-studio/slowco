@@ -1,0 +1,14 @@
+{
+  "root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"solid"
+	],
+	"extends": [
+		"prettier",
+		"eslint:recommended",
+		"plugin:solid/typescript"
+	],
+  "rules": {},
+  "settings": {}
+}

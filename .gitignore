@@ -1,0 +1,24 @@
+# editors
+.code
+.vscode
+.idea
+
+# dependencies
+node_modules
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env
+
+# turbo
+.turbo
+
+# apps
+dist
