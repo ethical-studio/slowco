@@ -4,11 +4,12 @@ module.exports = {
   darkMode: "class",
   theme: {
 		fontFamily: {
-			display: ["SF Pro Display", "Neue Haas Grotesk Display", "Helvetica Neue", "Helvetica", "sans"],
-			text: ["SF Pro Text", "Neue Haas Grotesk Text", "Helvetica Neue", "Helvetica", "sans"],
+			display: ["-apple-system-headline", "SF Pro Display", "Neue Haas Grotesk Display", "BlinkMacSystemFont", "-apple-system", "San Francisco", "Helvetica Neue", "Helvetica", "sans"],
+			text: ["-apple-system-body", "SF Pro Text", "Neue Haas Grotesk Text", "BlinkMacSystemFont", "-apple-system", "San Francisco", "Helvetica Neue", "Helvetica", "sans"],
 		},
 		colors: {
 			black: "#000000",
+			white: "#ffffff",
 			grayFill: "#E6E6E6",
 			grayBorder: "#C7C7C7",
 			grayText: "#989898",

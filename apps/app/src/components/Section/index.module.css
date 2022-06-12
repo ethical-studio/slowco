@@ -1,0 +1,11 @@
+.section {
+	@apply flex flex-col;
+}
+
+.title {
+	@apply font-display text-xl font-extrabold pb-2;
+}
+
+.content {
+	@apply flex flex-col border-0 border-t border-solid border-grayBorder;
+}

@@ -1,5 +1,5 @@
 .button {
-	@apply px-8 py-4 bg-grayFill border border-grayBorder rounded-xl inline-block font-display font-medium text-sm;
+	@apply px-8 py-4 bg-grayFill border border-solid border-grayBorder rounded-xl inline-block font-display font-medium text-sm;
 }
 
 .display-inline {

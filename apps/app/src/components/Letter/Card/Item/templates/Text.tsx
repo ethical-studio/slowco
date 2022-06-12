@@ -3,7 +3,11 @@ import { Component } from "solid-js";
 import { LetterCardTextProps } from "../index.types";
 
 const LetterCardText: Component<LetterCardTextProps> = (props) => {
-	return <div class={styles.text}>{props.text}</div>;
+	return (
+		<div class={`${styles.text} ${props.darkMode ? styles.lightText: ""}`}>
+			{props.text}
+		</div>
+	);
 };
 
 export default LetterCardText;

@@ -1,8 +1,8 @@
 import { Template } from "./index";
-import story from "../../../utils/story";
+import story from "../../../../utils/story";
 
 const SHARED = {
-	name: "Miroslav Vršecký",
+	title: "Miroslav Vršecký",
 	avatar: "https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1066&q=80"
 };
 
@@ -17,9 +17,9 @@ const TEXT_DATA = {
 };
 
 export default story({
-	title: "Components/Person/Item",
+	title: "Components/Person/Simple",
 });
 
-export const Content_Date = Template(DATE_DATA);
+export const Item_Date = Template(DATE_DATA);
 
-export const Content_Text = Template(TEXT_DATA);
+export const Item_Text = Template(TEXT_DATA);

@@ -1,0 +1,43 @@
+.item {
+	@apply p-6 rounded-xl bg-primaryFill overflow-hidden relative mr-3;
+}
+
+.title {
+	@apply text-darkText text-3xl font-extrabold font-display leading-8 mt-4 mb-8 z-10 relative;
+}
+
+.content {
+	@apply relative z-10;
+}
+
+.imageList {
+	@apply flex flex-row;
+}
+
+.imageItem {
+	@apply h-20 rounded-xl mr-2;
+
+	&:nth-last-child(1) {
+		@apply mr-0;
+	}
+}
+
+.overlay, .imageBackground, .darkBackground {
+	@apply absolute top-0 left-0 w-full h-full;
+}
+
+.imageBackground {
+	@apply object-cover z-0;
+}
+
+.darkBackground {
+	@apply bg-black z-10 opacity-50;
+}
+
+.text {
+	@apply text-sm text-darkText opacity-70 leading-4 font-text;
+}
+
+.lightText {
+	@apply text-lightText;
+}
