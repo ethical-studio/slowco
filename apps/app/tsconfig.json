@@ -1,6 +1,6 @@
 {
   "extends": "@slowco/config/tsconfig.core.json",
-  "include": ["./src"],
+  "include": ["./src", "./@types", "./stories"],
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
