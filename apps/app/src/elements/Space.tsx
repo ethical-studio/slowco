@@ -1,6 +1,5 @@
 import { styled } from "solid-styled-components";
-import { px } from "../utils/css";
-import { concat } from "../utils/string";
+import { concat, px } from "utils";
 
 type Type = "padding" | "margin";
 

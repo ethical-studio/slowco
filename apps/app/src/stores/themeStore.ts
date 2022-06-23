@@ -1,6 +1,6 @@
 import { createSignal } from "solid-js";
 import { DefaultTheme } from "solid-styled-components";
-import { px } from "../utils/css";
+import { px } from "utils";
 
 export const initialThemeValue = {
 	fontFamily: {

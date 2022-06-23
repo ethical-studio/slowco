@@ -1,5 +1,5 @@
 import { styled } from "solid-styled-components";
-import { per, rem } from "../utils/css";
+import { per, rem } from "utils";
 
 // Private
 
@@ -35,6 +35,11 @@ export const NameSmall = styled(DisplayFamily)({
 
 export const Caption = styled(DisplayFamily)({
 	fontSize: rem(0.875),
+});
+
+export const CaptionBold = styled(DisplayFamily)({
+		fontSize: rem(0.875),
+		fontWeight: 800,
 });
 
 export const Text = styled(TextFamily)({

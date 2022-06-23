@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import { userToken } from "../../store/userStore";
+import { userToken } from "stores";
 
 const LoginPage: Component = () => {
 	return <div>Token: {userToken() ? userToken(): "None"}</div>;

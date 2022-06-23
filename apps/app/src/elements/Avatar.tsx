@@ -1,5 +1,5 @@
 import { styled } from "solid-styled-components";
-import { px } from "../utils/css";
+import { px } from "utils";
 
 type Size = "s" | "m";
 
@@ -19,6 +19,7 @@ export const AvatarCircle = styled("img")<{
 }));
 
 export const AvatarSquare = styled("div")((props) => ({
+	position: "relative",
 	width: px(140),
 	height: px(140),
 	borderRadius: props.theme?.borderRadius.medium,

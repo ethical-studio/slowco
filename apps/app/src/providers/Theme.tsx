@@ -1,5 +1,5 @@
 import { initialThemeValue, theme } from "../stores/themeStore";
-import { createGlobalStyles, ThemeProvider } from "solid-styled-components";
+import { createGlobalStyles, ThemeProvider as StyledThemeProvider } from "solid-styled-components";
 import { Component, JSX } from "solid-js";
 
 const GlobalStyles = createGlobalStyles({
@@ -21,13 +21,11 @@ type ThemeComponent = Component<{
 	children: JSX.Element;
 }>;
 
-const Theme: ThemeComponent = (props) => {
+export const ThemeProvider: ThemeComponent = (props) => {
 	return (
-		<ThemeProvider theme={theme()}>
+		<StyledThemeProvider theme={theme()}>
 			<GlobalStyles />
-			{props.children}
-		</ThemeProvider>
-	);
+				{props.children}
+  		</StyledThemeProvider>
+  	);
 };
-
-export default Theme;

@@ -7,6 +7,15 @@
 		"lib": ["ESNext", "DOM"],
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+		"baseUrl": ".",
+		"paths": {
+			"components/*": ["src/components/*"],
+			"elements/*": ["src/elements/*"],
+			"pages/*": ["src/pages/*"],
+			"providers/*": ["src/providers/*"],
+			"stores/*": ["src/stores/*"],
+			"utils/*": ["src/utils/*"]
+		}
   }
 }
