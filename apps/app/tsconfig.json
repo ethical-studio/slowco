@@ -15,7 +15,8 @@
 			"pages/*": ["src/pages/*"],
 			"providers/*": ["src/providers/*"],
 			"stores/*": ["src/stores/*"],
-			"utils/*": ["src/utils/*"]
+			"utils/*": ["src/utils/*"],
+			"types/*": ["src/types/*"],
 		}
   }
 }

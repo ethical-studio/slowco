@@ -1,14 +1,14 @@
-import { Component, Switch } from "solid-js";
 import { ThemeProvider } from "./Theme";
+import { Component } from "solid-js";
+import { Routes } from "types/router";
 
-type RouterComponent = Component<{}>;
+type RouterProvider = Component<{
+	routes: Routes;
+}>;
 
-export const RouterProvider: RouterComponent = (_) => {
+export const RouterProvider: RouterProvider = (_) => {
 	return (
 		<ThemeProvider>
-			<Switch>
-
-			</Switch>
 		</ThemeProvider>
 	);
 };

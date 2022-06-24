@@ -1,8 +1,7 @@
-import { Component } from "solid-js";
-import { userToken } from "stores";
+import { page } from "utils/page";
 
-const LoginPage: Component = () => {
-	return <div>Token: {userToken() ? userToken(): "None"}</div>;
-}
+const LoginPage = page<{ name: string; }>((_) => {
+	return <div>Hello, {_.name}</div>;
+});
 
 export default LoginPage;

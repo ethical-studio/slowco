@@ -1,46 +1,55 @@
-import { createSignal } from "solid-js";
+import { createMemo, createSignal, Setter } from "solid-js";
+import {
+	AnyKeys,
+	LeftKeys,
+	MainKeys,
+	RightKeys,
+	routesMap, RouteTypes
+} from "../routes";
+import { Nullable } from "types/core";
+import { RouteDataOrEmpty } from "types/router";
+import { getDeviceType } from "utils/router";
 
-type Nullable<T> = T | null;
+// - Based on resolution we use either mobile or desktop router
+// 		- Mobile router can have only one active item in either left/right
+//  	- Desktop router can have different active items in both left/right
+// 		- Both versions re-render when core changes
+// - One function to navigate to main/left/right
+// - Another function to add/remove tabs (opened letters)
+// - Mobile and desktop versions use different routers
 
-// type Route = "home" | "login" | "register" | "reset-password";
+const [device, setDevice] = createSignal<"mobile" | "desktop">(getDeviceType());
 
-// export const [route, setRoute] = createSignal<Route>("home");
+// const [tabs, setTabs] = createSignal<string[]>([]);
 
+const [mainNavigation, setMainNavigation] = createSignal<Nullable<[MainKeys, any]>>(["login", {}]);
 
-type Page<N, D = {}> = {
-	name: N;
-	data: D;
+const [leftNavigation, setLeftNavigation] = createSignal<Nullable<[LeftKeys, any]>>(null);
+
+const [rightNavigation, setRightNavigation] = createSignal<Nullable<[RightKeys, any]>>(null);
+
+const router = createMemo(() => {
+	const main = mainNavigation();
+	const left = leftNavigation();
+	const right = rightNavigation();
+
+	return device() === "desktop"
+		? { main, left, right }
+		: { main, route: left || right };
+});
+
+const SIGNAL_MAP: Record<RouteTypes, Setter<Nullable<string>>> = {
+	main: setMainNavigation,
+	left: setLeftNavigation,
+	right: setRightNavigation,
 };
 
-type Device = "mobile" | "desktop";
+const navigate = <T extends AnyKeys>(
+	route: T,
+	data: RouteDataOrEmpty<T>,
+) => {
+	const type = routesMap[route] as RouteTypes;
+	const signal = SIGNAL_MAP[type] as Setter<Nullable<[string, any]>>;
 
-type Navigation = {
-	core: Nullable<Page<"login"> | Page<"register"> | Page<"reset-password">>;
-	tabs: Nullable<string[]>;
-	left: Nullable<Page<"inbox"> | Page<"settings"> | Page<"setting", { type: string }>>;
-	right: Nullable<Page<"contacts"> | Page<"contact", { nickname: string }>>;
-};
-
-navigate("login");
-navigate("inbox");
-navigate("contact", { nickname: "yamiteru" });
-
-addTabs("sefsgfesgsef");
-removeTabs("fsfsefssfs");
-
-const MAP = {
-	inbox: "left",
-	login: "public",
-	contact: "right"
-};
-
-type RouterMobile = {
-	route: Page<any>;
-};
-
-type RouterDesktop = {
-	core: Nullable<Page<any>>;
-	tabs: Nullable<string[]>;
-	left: Nullable<Page<any>>;
-	right: Nullable<Page<any>>;
+	signal(() => [route, data]);
 };

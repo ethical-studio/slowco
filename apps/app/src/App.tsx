@@ -1,9 +1,10 @@
 import type { Component } from "solid-js";
-import { RouterProvider } from "providers";
+import { RouterProvider } from "providers/Router";
+import routes from "./routes";
 
 const App: Component = () => {
 	return (
-		<RouterProvider />
+		<RouterProvider routes={routes} />
 	);
 };
 
