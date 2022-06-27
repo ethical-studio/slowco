@@ -1,10 +1,13 @@
 import type { Component } from "solid-js";
 import { RouterProvider } from "providers/Router";
+import { ThemeProvider } from "providers/Theme";
 import routes from "./routes";
 
 const App: Component = () => {
 	return (
-		<RouterProvider routes={routes} />
+		<ThemeProvider>
+			<RouterProvider routes={routes} />
+		</ThemeProvider>
 	);
 };
 

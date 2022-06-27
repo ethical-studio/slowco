@@ -15,6 +15,8 @@ export type Routes = {
 	right: Record<string, ReturnType<typeof lazy>>,
 };
 
+export type RouterItem<T extends AnyKeys> = [route: T, data: any];
+
 export type ExtractRoutes<T extends Routes, K extends keyof Routes> = {
 	[A in keyof T[K]]: T[K][A] extends Component<infer D>
 		? D

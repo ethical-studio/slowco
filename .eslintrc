@@ -9,6 +9,8 @@
 		"eslint:recommended",
 		"plugin:solid/typescript"
 	],
-  "rules": {},
+  "rules": {
+		"no-unused-vars": "off"
+	},
   "settings": {}
 }

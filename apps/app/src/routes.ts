@@ -5,17 +5,17 @@ import { ExtractRoutes } from "types/router";
 export const routes = createRoutes({
 	main: {
 		login: lazy(() => import("./pages/Login")),
-		register: lazy(() => import("./pages/Login")),
+		register: lazy(() => import("./pages/Register")),
 		resetPassword: lazy(() => import("./pages/Login")),
 	},
 	left: {
-		inbox: lazy(() => import("./pages/Register")),
+		inbox: lazy(() => import("./pages/Inbox")),
 		letter: lazy(() => import("./pages/Login")),
 		settings: lazy(() => import("./pages/Login")),
 		settingsItem: lazy(() => import("./pages/Login")),
 	},
 	right: {
-		contacts: lazy(() => import("./pages/Login")),
+		contacts: lazy(() => import("./pages/Contacts")),
 		contactsItem: lazy(() => import("./pages/Login")),
 	},
 });

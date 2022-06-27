@@ -1,17 +1,17 @@
 import { page } from "utils/page";
 import { useNavigate } from "../../hooks/useNavigate";
 
-const LoginPage = page((_) => {
+const InboxPage = page((_) => {
 	const navigate = useNavigate();
 
 	return (
 		<div>
-			<h1>Login</h1>
-			<button onClick={() => navigate("inbox", null)}>
-				Inbox
+			<h1>Inbox</h1>
+			<button onClick={() => navigate("login", null)}>
+				Login
 			</button>
 		</div>
 	);
 });
 
-export default LoginPage;
+export default InboxPage;
